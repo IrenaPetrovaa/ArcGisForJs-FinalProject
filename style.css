@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html,
 body,
 #viewDiv {
@@ -5,4 +6,13 @@ body,
     margin: 0;
     height: 100%;
     width: 100%;
+=======
+html,
+body,
+#viewDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+>>>>>>> fa9b3f7e1f7c6a11396b9cdd5ae99f4327c57232
 }
