@@ -1,6 +1,6 @@
 require([
-    "esri/config", 
-    "esri/WebMap", 
+    "esri/config",
+    "esri/WebMap",
     "esri/views/MapView",
     "esri/widgets/ScaleBar",
     "esri/widgets/Legend",
@@ -9,7 +9,7 @@ require([
     "esri/widgets/BasemapToggle",
     "esri/widgets/BasemapGallery",
     "esri/widgets/Search"
-], function(esriConfig, WebMap, MapView, ScaleBar,Legend, Home, LayerList, BasemapToggle, BasemapGallery, Search) {
+], function (esriConfig, WebMap, MapView, ScaleBar, Legend, Home, LayerList, BasemapToggle, BasemapGallery, Search) {
     esriConfig.apiKey = "AAPK11470563ebea40ca8dc828aabaa1ff34NHMnY0teh1E2ut_mvV-mFNRsb2nkwyUOwl5KxIy3YBm84ppxazR_vHgx4u5tFspW"
 
     const webMap = new WebMap({
@@ -31,11 +31,20 @@ require([
 
     view.ui.add(homeBtn, "top-left");
 
-    const legend = new Legend({
+    const legend = new Legend ({
         view: view
     });
 
-    view.ui.add(legend, "bottom=left");
+    view.ui.add(legend, "bottom-left");
+
+    const scaleBar = new ScaleBar ({
+        view: view,
+        unit: "metric",
+        style: "ruler"
+    });
+
+    view.ui.add(scaleBar, "bottom-right");
 
 
 })
+ 
