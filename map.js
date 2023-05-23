@@ -31,13 +31,13 @@ require([
 
     view.ui.add(homeBtn, "top-left");
 
-    const legend = new Legend ({
+    const legend = new Legend({
         view: view
     });
 
     view.ui.add(legend, "bottom-left");
 
-    const scaleBar = new ScaleBar ({
+    const scaleBar = new ScaleBar({
         view: view,
         unit: "metric",
         style: "ruler"
@@ -63,9 +63,9 @@ require([
     })
 
     view.ui.add(basemapToggle, "bottom-right");
-    
+
     const layerList = new LayerList({
-        view:view
+        view: view
     })
 
     view.ui.add(basemapGallery, "top-right");
@@ -73,38 +73,37 @@ require([
     view.ui.add(layerList, "top-right");
 
     document
-    .getElementById("layerList-btn")
-    .addEventListener("click", function() {
-        toggleButton("layerList");
-    })
+        .getElementById("layerList-btn")
+        .addEventListener("click", function () {
+            toggleButton("layerList");
+        })
 
     document
-    .getElementById("basemap-btn")
-    .addEventListener("click", function() {
-        toggleButton("gallery");
-    })
+        .getElementById("basemap-btn")
+        .addEventListener("click", function () {
+            toggleButton("gallery");
+        })
 
     const searchWidget = new Search({
-        view:view
+        view: view
     })
 
     view.ui.add(searchWidget, "top-left");
 
-    function toggleButton (item) {
+    function toggleButton(item) {
         const layerListEl = document.getElementsByClassName("esri-layer-list")[0];
-        const galleryEl = document.getElementsByClassName("esri-basemap-gallery") [0];
+        const galleryEl = document.getElementsByClassName("esri-basemap-gallery")[0];
         let currentProp;
 
 
-        if(item =="layerList") {
+        if (item == "layerList") {
             currentProp = layerListEl.style.getPropertyValue("display");
-            layerListEl.style.setProperty("display", currentProp =="block" ? "none" : "block");
+            layerListEl.style.setProperty("display", currentProp == "block" ? "none" : "block");
             galleryEl.style.setProperty("display", "none");
-        } else if(item== "gallery") {
+        } else if (item == "gallery") {
             currentProp = galleryEl.style.getPropertyValue("display");
-            galleryEl.style.setProperty("display", currentProp =="block" ? "none" : "block");
+            galleryEl.style.setProperty("display", currentProp == "block" ? "none" : "block");
             layerListEl.style.setProperty("display", "none")
         }
     }
 })
- 
